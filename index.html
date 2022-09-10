@@ -13,19 +13,24 @@
   <body>
     <div class="wrapper">
       <div class="header">
-      <div class = "timeBlock">
-             <div id="currentDate">
-                  
+    	  <div class = "timeBlock">
+					<div class = "timeBlock1">
+             <div class="currentDate">
+                  DD/MM/YYYY
              </div>
             
-             <div id = "currentTime">
-                
-            </div>
-          </br>
-          </br>
-            <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/042/230/original/1.jpg?1659259741" alt="cloudy" class="cloudy"/>
-        </div>
-
+             <div class = "currentTime">
+                hh:mm
+						</div>
+						<div class="description">
+							clouds
+						</div>
+          
+          </div>
+					<div class="img">
+						<img src="http://openweathermap.org/img/wn/10d@2x.png" alt="icon weather" id="icon"/>
+						</div>
+    	  </div>
         <div id="townData">
           <p class="town">
             Please enter a city name.
@@ -51,18 +56,27 @@
                  
             </button>
           </p>
+          <div class="description1">
+            <p class="feltTemp">
+              Felt temperature <span id="feelsLike">20</span>°C
+            </p>
 
-          <p class="feltTemp">
-            Felt Temperature 22°C
+            <p class="otherInf">
+								Atmosphere pressure:
+							<span class="pressure">1000</span>
+							millibars
+            </p>
+            <p class="humidity">
+						Humidity:
+						<span class="dataHumidity"> 70 </span>
+						%
+            </p>
+            <p class="wind">
+						Wind:
+						<span class="dataWind"> 17 </span>
+						km/h
           </p>
-
-          <p class="otherInf">
-            Chance of precipitation:7%
-          </br>
-            Humidity:70%
-          </br>
-            Wind: 17km/h
-          </p>
+          </div>
         </div>
       </div>
 

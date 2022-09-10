@@ -5,8 +5,8 @@ let year = now.getFullYear();
 let hours = now.getHours();
 let minute = now.getMinutes();
 
-let nowDate = document.querySelector("#currentDate");
-let nowTime = document.querySelector("#currentTime");
+let nowDate = document.querySelector(".currentDate");
+let nowTime = document.querySelector(".currentTime");
 
 let setTime = function (setTime) {
   if (month <= 9) {
@@ -33,6 +33,7 @@ let search = document.querySelector("#buttonSearch");
 let current = document.querySelector("#buttonCurrent");
 let curentTemp = 20;
 let dataDegrees = document.querySelector("#dataDegrees");
+
 dataDegrees.innerHTML = `${curentTemp}`;
 
 let celsius = document.querySelector(".celsius");
@@ -77,17 +78,32 @@ current.addEventListener("click", function () {
 });
 
 function showTemperature(response) {
+  console.log(response.data);
   let city = response.data.name;
   let currentlyTemp = Math.round(response.data.main.temp);
+  let descriptionElement = document.querySelector(".description");
+  let dataHumidity = document.querySelector(".dataHumidity");
   let dataCity = document.querySelector(".town");
   let temperatureElement = document.querySelector("#dataDegrees");
   let dataDegrees = document.querySelector("#dataDegrees");
-  dataDegrees.innerHTML = `${currentlyTemp}`;
-
+  let dataWind = document.querySelector(".dataWind"); //Homework (week7) Wind
   let celsius = document.querySelector(".celsius");
   let fahrenheit = document.querySelector(".f");
   let convertToFahr = Math.round(currentlyTemp * 1.8 + 32);
+  let icon = document.querySelector("#icon");
+  let feelsLike = document.querySelector("#feelsLike");
+  let pressure = document.querySelector(".pressure");
 
+  descriptionElement.innerHTML = response.data.weather[0].description;
+  dataHumidity.innerHTML = Math.round(response.data.main.humidity);
+  dataDegrees.innerHTML = `${currentlyTemp}`;
+  dataWind.innerHTML = Math.round(response.data.wind.speed);
+  pressure.innerHTML = Math.round(response.data.main.pressure);
+  icon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  feelsLike.innerHTML = Math.round(response.data.main.feels_like);
   fahrenheit.addEventListener("click", function () {
     dataDegrees.innerHTML = convertToFahr;
   });
