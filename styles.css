@@ -9,15 +9,16 @@ body {
   width: 800px;
   height: auto;
   padding: 0 0;
-  margin: 15px 15px;
+  margin: 15px auto;
 }
 .header {
   width: 800px;
   height: 300px;
   padding: 0 0;
-  margin: 0 0;
+  margin: 0 auto;
   background-color: white;
-  border-radius: 4px;
+  border: 2px solid #c0c0c0;
+  border-radius: 6px;
 }
 
 .timeBlock {
@@ -61,14 +62,15 @@ body {
 }
 
 #townData {
-  position: absolute;
-  left: 220px;
   width: 270px;
   height: 300px;
   padding: 0px 20px 10px 50px;
   margin: 0 0;
 }
 .town {
+  position: relative;
+  top: 4px;
+  left: 15px;
   width: 450px;
   margin: 0 0 20px -14px;
   padding: 14px 0 0 0;
@@ -80,9 +82,8 @@ body {
 }
 
 #searchForm {
-  position: absolute;
-  top: -2px;
-  left: -2px;
+  position: relative;
+  left: 0px;
   width: 270px;
   height: 37px;
   padding: 0 20px 0 20px;
@@ -93,23 +94,23 @@ body {
 }
 
 #buttonSearch {
-  position: absolute;
-  top: -2px;
-  left: 280px;
-  padding: 5px 25px;
+  position: relative;
+  top: -37px;
+  left: 295px;
+  padding: 5px 25px 6px 25px;
   margin: 0;
   background-color: #457eaa;
   font-size: 17px;
   color: white;
   outline: none;
   border: none;
-  border-radius: 2px;
+  border-radius: 4px;
 }
 
 #buttonCurrent {
-  position: absolute;
-  top: -2px;
-  left: 290px;
+  position: relative;
+  top: -73px;
+  left: 405px;
   padding: 5px 25px;
   margin: 0;
   background-color: #457eaa;
@@ -117,12 +118,12 @@ body {
   color: white;
   outline: none;
   border: none;
-  border-radius: 2px;
+  border-radius: 4px;
 }
 .degrees {
-  position: absolute;
-  top: 130px;
-  left: 32px;
+  position: relative;
+  top: -70px;
+  left: 15px;
   height: 70px;
   color: #457eaa;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
@@ -133,9 +134,9 @@ body {
   margin: 0;
 }
 .celsius {
-  position: absolute;
-  top: -30px;
-  left: 30px;
+  position: relative;
+  top: -40px;
+  left: 40px;
   height: 70px;
   color: #457eaa;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
@@ -146,31 +147,30 @@ body {
   background: transparent;
 }
 #slash {
-  position: absolute;
-  top: 0px;
-  left: 70px;
+  position: relative;
+  top: -40px;
+  left: 35px;
 }
 .f {
-  position: absolute;
-  top: -28px;
-  left: 80px;
+  position: relative;
+  top: -110px;
+  left: 95px;
   height: 70px;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   color: #5c6677;
   font-size: 18px;
   font-size: 30px;
-  /* line-height: 10px; */
   outline: none;
   border: 0;
   background: transparent;
 }
 
 .description1 {
-  width: 270px;
-  position: absolute;
-  top: 155px;
-  left: 34px;
+  width: 290px;
+  position: relative;
+  top: -115px;
+  left: 15px;
 }
 
 .feltTemp,
