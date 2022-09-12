@@ -8,28 +8,43 @@ let minute = now.getMinutes();
 let nowDate = document.querySelector(".currentDate");
 let nowTime = document.querySelector(".currentTime");
 
-let setTime = function (setTime) {
-  if (month <= 9) {
-    nowDate.innerHTML = `${date}/ 0${month}/ ${year}`;
-  } else {
-    nowDate.innerHTML = `${date}/ ${month}/ ${year}`;
-  }
-
-  if (hours <= 9) {
-    nowTime.innerHTML = `0${hours}:${minute}`;
-  } else {
-    nowTime.innerHTML = `${hours}:${minute}`;
-  }
-};
-if (minute <= 9) {
-  nowTime.innerHTML = `${hours}:0${minute}`;
-} else {
-  nowTime.innerHTML = `${hours}:${minute}`;
+function search(city) {
+  let apiKey = "3c3046eb3665ca592e70fff5ccda526b";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showTemperature);
 }
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#searchForm");
+  search(cityInputElement.value);
+  console.log(cityInputElement.value);
+}
+
+search("Kyiv");
+let form = document.querySelector("#form");
+form.addEventListener("submit", handleSubmit);
+
+let setTime = function (setTime) {
+  if (date < 10) {
+    date = `0${date}`;
+  }
+  if (month < 10) {
+    month = `0${month}`;
+  }
+  nowDate.innerHTML = `${date}/ ${month}/ ${year}`;
+
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  if (minute < 10) {
+    minute = `0${minute}`;
+  }
+  nowTime.innerHTML = `${hours}:${minute}`;
+};
 
 setTime();
 
-let search = document.querySelector("#buttonSearch");
 let current = document.querySelector("#buttonCurrent");
 let curentTemp = 20;
 let dataDegrees = document.querySelector("#dataDegrees");
@@ -47,24 +62,6 @@ fahrenheit.addEventListener("click", function () {
 celsius.addEventListener("click", function () {
   dataDegrees.innerHTML = curentTemp;
 });
-// WEEK 5 HOMEWORK
-search.addEventListener("click", searchTown);
-
-function searchTown(event) {
-  event.preventDefault();
-  let dataTown = document.querySelector("#searchForm");
-  let town = document.querySelector(".town");
-  if (dataTown.value) {
-    town.innerHTML = `${dataTown.value}`;
-    let apiKey = "3c3046eb3665ca592e70fff5ccda526b";
-    let city = dataTown.value;
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(showTemperature);
-  } else {
-    town.innerHTML = null;
-    alert(`Please type a city name`);
-  }
-}
 
 current.addEventListener("click", function () {
   function showPosition(position) {
@@ -78,7 +75,6 @@ current.addEventListener("click", function () {
 });
 
 function showTemperature(response) {
-  console.log(response.data);
   let city = response.data.name;
   let currentlyTemp = Math.round(response.data.main.temp);
   let descriptionElement = document.querySelector(".description");

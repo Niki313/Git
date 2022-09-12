@@ -3,291 +3,110 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <script src="index.js"></script>
-    <script src="https://kit.fontawesome.com/0345ce63ac.js" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+    <script
+      src="https://kit.fontawesome.com/0345ce63ac.js"
+      crossorigin="anonymous"
+    ></script>
     <title>SheCodes</title>
     <link rel="stylesheet" href="styles.css" />
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-
-</head>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+  </head>
   <body>
     <div class="wrapper">
       <div class="header">
-    	  <div class = "timeBlock">
-					<div class = "timeBlock1">
-             <div class="currentDate">
-                  DD/MM/YYYY
-             </div>
-            
-             <div class = "currentTime">
-                hh:mm
-						</div>
-						<div class="description">
-							clouds
-						</div>
-          
+        <div class="timeBlock">
+          <div class="timeBlock1">
+            <div class="currentDate">01/01/2022</div>
+            <div class="currentTime">12:00</div>
+            <div class="description">it is rainy</div>
           </div>
-					<div class="img">
-						<img src="http://openweathermap.org/img/wn/10d@2x.png" alt="icon weather" id="icon"/>
-						</div>
-    	  </div>
+          <div class="img">
+            <img
+              src="http://openweathermap.org/img/wn/10d@2x.png"
+              alt="icon weather"
+              id="icon"
+            />
+          </div>
+        </div>
         <div id="townData">
-          <p class="town">
-            Please enter a city name.
-          </p>
-
-         
-           <form class="form">
-            <input type="text" id="searchForm" name="search">
-            <button id="buttonSearch">
-              <i class="fa-solid fa-magnifying-glass"></i>
-            </button>
-           </form>
-
-           <button id ="buttonCurrent">Current</button>
-
-          <p class="degrees"> 
-              <span id = "dataDegrees">
-            
-              </span>    
-            <input type = "button" value = "°C" class ="celsius">
-              <span> / </span>
-            <input type = "button" value = "°F" class ="f">     
-                 
-            </button>
-          </p>
+          <p class="town">Oslo</p>
+          <form id="form" class="mb-3">
+            <div class="row">
+              <div class="col-9">
+                <input
+                  type="search"
+                  placeholder="Type a city..."
+                  id="searchForm"
+                  autocomplete="off"
+                />
+              </div>
+              <div class="col-6">
+                <input
+                  id="buttonSearch"
+                  type="submit"
+                  value="Search"
+                  class="btn btn-primary w-100"
+                />
+              </div>
+              <div class="col-6">
+                <input
+                  id="buttonCurrent"
+                  type="submit"
+                  value="Current"
+                  class="btn btn-primary w-100"
+                />
+              </div>
+            </div>
+          </form>
+          <div class="degrees">
+            <span id="dataDegrees"> 20 </span>
+            <input type="button" value="°C" class="celsius" />
+            <span id="slash"> / </span>
+            <input type="button" value="°F" class="f" />
+          </div>
           <div class="description1">
             <p class="feltTemp">
-              Felt temperature <span id="feelsLike">20</span>°C
+              Felt temperature
+              <span id="feelsLike"> 20 </span>
+              °C
             </p>
-
             <p class="otherInf">
-								Atmosphere pressure:
-							<span class="pressure">1000</span>
-							millibars
+              Atmosphere pressure:
+              <span class="pressure"> 1000 </span>
+              millibars
             </p>
             <p class="humidity">
-						Humidity:
-						<span class="dataHumidity"> 70 </span>
-						%
+              Humidity:
+              <span class="dataHumidity"> 70 </span>
+              %
             </p>
             <p class="wind">
-						Wind:
-						<span class="dataWind"> 17 </span>
-						km/h
-          </p>
+              Wind:
+              <span class="dataWind"> 17 </span>
+              km/h
+            </p>
           </div>
         </div>
       </div>
-
-      <div class="time">
-        <div class="time1">
-          29/07/2022
-        </div>
-
-        <div class="hour1">
-
-          <p class="hour_17">
-            17:00
-          </p>
-
-          <p class="deg18">
-            18°C        
-            <span class="f1">
-              /F°
-            </span>
-          </p> 
-                  
-          <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/042/231/original/depositphotos_406906206-stock-illustration-cloudy-windy-vector-best-gray_%281%29.jpg?1659259749" alt="cloud" class="cloud"/>
-        </div>
-        
-        <div class="hour2">
-          <p class="hour_17">
-            17:00
-          </p>
-          
-          <p class="deg18">
-            18°C        
-            <span class="f1">
-              /F°
-            </span>
-          </p> 
-          
-          <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/042/231/original/depositphotos_406906206-stock-illustration-cloudy-windy-vector-best-gray_%281%29.jpg?1659259749" alt="cloud" class="cloud"/>
-        </div>
-
-        <div class="hour3">
-          
-          <p class="hour_17">
-            17:00
-          </p>
-
-          <p class="deg18">
-            18°C        
-            <span class="f1">
-              /F°
-            </span>
-          </p>
-          
-          <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/042/231/original/depositphotos_406906206-stock-illustration-cloudy-windy-vector-best-gray_%281%29.jpg?1659259749" alt="cloud" class="cloud"/>
-        </div>
-      
-     
-        <div class="hour4">
-          
-          <p class="hour_17">
-            17:00
-          </p>
-          
-          <p class="deg18">
-            18°C        
-            <span class="f1">
-              /F°
-            </span>
-          </p>
-          
-          <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/042/231/original/depositphotos_406906206-stock-illustration-cloudy-windy-vector-best-gray_%281%29.jpg?1659259749" alt="cloud" class="cloud"/>
-        </div>
-      
-        <div class="hour5">
-          
-          <p class="hour_17">
-            17:00
-          </p>
-          
-          <p class="deg18">
-              18°C        
-            <span class="f1">
-              /F°
-            </span>
-          </p>
-          
-          <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/042/231/original/depositphotos_406906206-stock-illustration-cloudy-windy-vector-best-gray_%281%29.jpg?1659259749" alt="cloud" class="cloud"/>
-        </div>
-      </div>
-      
-      <div class="clean">
-      </div>
-
-      <div class="week">
-        
-          <div class="week1">
-              Week
-          </div>
-
-          <div class="day1">
-            <p class="hour_17">
-               Kyiv
-            </br>
-               30/07/2022
-            </br>
-              Saturday
-            </p>
-
-            <p class="deg18">
-              18°C        
-            <span class="f1">
-              /F°
-            </span>
-            </p> 
-        
-            <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/042/231/original/depositphotos_406906206-stock-illustration-cloudy-windy-vector-best-gray_%281%29.jpg?1659259749" alt="cloud" class="cloud"/>
-          <a href="">More...</a>
-          </div>
-
-        </div>
-
-        <div class="day2">
-            <p class="hour_17">
-               Kyiv
-            </br>
-               31/07/2022
-            </br>
-              Sunday
-            </p>
-
-          <p class="deg18">
-              20°C        
-            <span class="f1">
-              /F°
-            </span>
-              </p> 
-
-          <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/042/231/original/depositphotos_406906206-stock-illustration-cloudy-windy-vector-best-gray_%281%29.jpg?1659259749" alt="cloud" class="cloud"/>
-          <a href="">More...</a>
-        </div>
-
-        <div class="day3">
-
-            <p class="hour_17">
-               Kyiv
-            </br>
-               01/08/2022
-            </br>
-              Monday
-            </p>
-
-          <p class="deg18">
-              24°C        
-              <span class="f1">
-              /F°
-            </span>
-          </p> 
-
-          <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/042/231/original/depositphotos_406906206-stock-illustration-cloudy-windy-vector-best-gray_%281%29.jpg?1659259749" alt="cloud" class="cloud"/>
-          <a href="">More...</a>
-        </div>
-
-        <div class="day4">
-
-            <p class="hour_17">
-               Kyiv
-            </br>
-               01/08/2022
-            </br>
-              Tuesday
-            </p>
-
-          <p class="deg18">
-            25°C        
-            <span class="f1">
-            /F°
-            </span>
-          </p> 
-
-          <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/042/231/original/depositphotos_406906206-stock-illustration-cloudy-windy-vector-best-gray_%281%29.jpg?1659259749" alt="cloud" class="cloud"/>
-          <a href="">More...</a>
-        </div>
-
-        
-        <div class="day5">
-
-            <p class="hour_17">
-               Kyiv
-            </br>
-               01/08/2022
-            </br>
-              Wednesday
-            </p>
-
-          <p class="deg18">
-            21°C        
-            <span class="f1">
-            /F°
-            </span>
-          </p> 
-
-          <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/042/231/original/depositphotos_406906206-stock-illustration-cloudy-windy-vector-best-gray_%281%29.jpg?1659259749" alt="cloud" class="cloud"/>
-        <a href="">More...</a>
-        </div>
-
-      </div>
-  </div>
-  <div class="clean1"></div>
-
+    </div>
   </body>
+  <div class="clean1"></div>
   <footer class="flex-container">
-    <div class="gitHub"><a href="https://github.com/Niki313/Git.git" target="_blank" class="gitHub">GitHub</a></div>
+    <div class="gitHub">
+      <a
+        href="https://github.com/Niki313/Git.git"
+        target="_blank"
+        class="gitHub"
+        >GitHub</a
+      >
+    </div>
     <div class="copyright">© Create by Nataliia Dorosh 2022</div>
   </footer>
 </html>
