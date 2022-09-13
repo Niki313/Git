@@ -20,7 +20,7 @@ function handleSubmit(event) {
   search(cityInputElement.value);
 }
 
-let form = document.querySelector("#form");
+let form = document.querySelector("#form-search");
 form.addEventListener("submit", handleSubmit);
 
 let setTime = function (setTime) {
