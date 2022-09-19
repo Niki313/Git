@@ -4,6 +4,7 @@ let month = now.getMonth();
 let year = now.getFullYear();
 let hours = now.getHours();
 let minute = now.getMinutes();
+let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
 let nowDate = document.querySelector(".currentDate");
 let currentNameDay = document.querySelector(".nameDay");
@@ -41,15 +42,7 @@ let setTime = function () {
     minute = `0${minute}`;
   }
   nowTime.innerHTML = `${hours}:${minute}`;
-  let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
+
   let day = days[date.getDay()];
 
   currentNameDay.innerHTML = `${day}`;
@@ -59,9 +52,8 @@ setTime();
 
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
-  let day = date.getDay();
-  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-  return days[day];
+
+  return days[date.getDay()];
 }
 
 function displayForecast(response) {
