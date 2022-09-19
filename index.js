@@ -25,6 +25,7 @@ let form = document.querySelector("#form-search");
 form.addEventListener("submit", handleSubmit);
 
 let setTime = function () {
+  let date = now;
   if (date < 10) {
     date = `0${date}`;
   }
