@@ -24,7 +24,7 @@ function handleSubmit(event) {
 let form = document.querySelector("#form-search");
 form.addEventListener("submit", handleSubmit);
 
-let setTime = function (setTime) {
+let setTime = function () {
   if (date < 10) {
     date = `0${date}`;
   }
@@ -100,7 +100,7 @@ function displayForecast(response) {
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
-displayForecast();
+// displayForecast();
 
 let current = document.querySelector("#buttonCurrent");
 let curentTemp = 20;
