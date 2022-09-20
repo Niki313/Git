@@ -4,7 +4,15 @@ let month = now.getMonth();
 let year = now.getFullYear();
 let hours = now.getHours();
 let minute = now.getMinutes();
-let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+let days = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
 
 let nowDate = document.querySelector(".currentDate");
 let currentNameDay = document.querySelector(".nameDay");
@@ -26,14 +34,13 @@ let form = document.querySelector("#form-search");
 form.addEventListener("submit", handleSubmit);
 
 let setTime = function () {
-  let date = now;
+  let dateToday = now;
   if (date < 10) {
     date = `0${date}`;
   }
   if (month < 10) {
     month = `0${month}`;
   }
-  nowDate.innerHTML = `${date}/ ${month}/ ${year}`;
 
   if (hours < 10) {
     hours = `0${hours}`;
@@ -41,11 +48,9 @@ let setTime = function () {
   if (minute < 10) {
     minute = `0${minute}`;
   }
-  nowTime.innerHTML = `${hours}:${minute}`;
+  let day = days[dateToday.getDay()];
 
-  let day = days[date.getDay()];
-
-  currentNameDay.innerHTML = `${day}`;
+  nowDate.innerHTML = `${date}/ ${month}/ ${year} <br/> ${hours}:${minute} <br/> ${day}`;
 };
 
 setTime();
