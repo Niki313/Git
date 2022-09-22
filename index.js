@@ -15,8 +15,6 @@ let days = [
 ];
 
 let nowDate = document.querySelector(".currentDate");
-let currentNameDay = document.querySelector(".nameDay");
-let nowTime = document.querySelector(".currentTime");
 
 function search(city) {
   let apiKey = "3c3046eb3665ca592e70fff5ccda526b";
@@ -65,14 +63,14 @@ function displayForecast(response) {
   let forecast = response.data.daily;
 
   let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row" id="forecastDays">`;
 
-  let forecastHTML = `<div class="row">`;
   forecast.forEach(function (forecastDay, index) {
     if (index < 6) {
       forecastHTML =
         forecastHTML +
         `  
-  <div class="col-2">
+  <div class="col-2 forecastColumn">
     <div class="weather-forecast-date">${formatDay(forecastDay.dt)}</div>
     ${index}
     <img

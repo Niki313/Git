@@ -194,7 +194,7 @@ footer {
   top: -550px;
   left: 0px;
   width: 800px;
-  height: 70px;
+  min-height: 70px;
   background-color: white;
   border: 2px solid #c0c0c0;
   padding: 0 0;
@@ -215,4 +215,18 @@ footer {
   margin: 5px auto;
   text-align: center;
   color: #457eaa;
+}
+
+#forecastDays {
+  width: 800px;
+  height: auto;
+  padding: 0 0;
+  /* margin: 15px auto; */
+}
+
+.forecastColumn {
+  background-color: white;
+  border-radius: 4px;
+  /* margin: 0 5px; */
+  /* padding: 5px 5px; */
 }
