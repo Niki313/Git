@@ -130,11 +130,10 @@ current.addEventListener("click", function () {
 });
 
 function getForecast(coordinates) {
-  console.log(coordinates);
-  let apiKey = "3c3046eb3665ca592e70fff5ccda526b";
-  let lat = position.coords.latitude;
-  let lon = position.coords.longitude;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+  let apiKey = "a43564c91a6c605aeb564c9ed02e3858";
+  let lat = coordinates.lat;
+  let lon = coordinates.lon;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
 }
 
@@ -166,8 +165,8 @@ function showTemperature(response) {
   feelsLike.innerHTML = Math.round(response.data.main.feels_like);
   fahrenheit.addEventListener("click", function () {
     dataDegrees.innerHTML = convertToFahr;
-    getForecast(response.data.coord);
   });
+  getForecast(response.data.coord);
 
   celsius.addEventListener("click", function () {
     dataDegrees.innerHTML = currentlyTemp;
