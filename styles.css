@@ -221,12 +221,12 @@ footer {
   width: 800px;
   height: auto;
   padding: 0 0;
-  /* margin: 15px auto; */
+  margin: 15px auto;
 }
 
 .forecastColumn {
   background-color: white;
   border-radius: 4px;
-  /* margin: 0 5px; */
-  /* padding: 5px 5px; */
+  margin: 0 5px; */
+  padding: 5px 5px;
 }

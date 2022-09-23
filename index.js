@@ -172,3 +172,6 @@ function showTemperature(response) {
   dataCity.innerHTML = `${city}`;
   temperatureElement.innerHTML = `${currentlyTemp}`;
 }
+
+
+
