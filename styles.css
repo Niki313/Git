@@ -218,15 +218,13 @@ footer {
 }
 
 #forecastDays {
-  width: 800px;
-  height: auto;
   padding: 0 0;
-  margin: 15px auto;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .forecastColumn {
   background-color: white;
   border-radius: 4px;
-  margin: 0 5px; */
   padding: 5px 5px;
 }
