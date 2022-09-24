@@ -15,6 +15,8 @@ let days = [
 ];
 
 let nowDate = document.querySelector(".currentDate");
+let currentNameDay = document.querySelector(".nameDay");
+let nowTime = document.querySelector(".currentTime");
 
 function search(city) {
   let apiKey = "3c3046eb3665ca592e70fff5ccda526b";
@@ -77,16 +79,21 @@ function displayForecast(response) {
         src="http://openweathermap.org/img/wn/${
           forecastDay.weather[0].icon
         }@2x.png"
-        alt=""
-        width="42"
-      />
+        alt="weather icon" width="200px"/>
       <div class="weather-forecast-temperatures">
         <span class="weather-forecast-temperatures-max"> ${Math.round(
           forecastDay.temp.max
-        )}°</span>
+        )}°C</span>
+        <span class="weather-forecast-temperatures-fahr-max"> ${Math.round(
+          forecastDay.temp.max * 1.8 + 32
+        )}°F</span>
+        </br>
         <span class="weather-forecast-temperatures-min">${Math.round(
           forecastDay.temp.min
-        )}°</span>
+        )}°C</span>
+        <span class="weather-forecast-temperatures-fahr-min"> ${Math.round(
+          forecastDay.temp.min * 1.8 + 32
+        )}°F</span>
       </div>
     </div>
   </div>
@@ -128,10 +135,11 @@ current.addEventListener("click", function () {
 });
 
 function getForecast(coordinates) {
-  let apiKey = "a43564c91a6c605aeb564c9ed02e3858";
-  let lat = coordinates.lat;
-  let lon = coordinates.lon;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+  console.log(coordinates);
+  let apiKey = "3c3046eb3665ca592e70fff5ccda526b";
+  let lat = position.coords.latitude;
+  let lon = position.coords.longitude;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
 }
 
@@ -143,7 +151,7 @@ function showTemperature(response) {
   let dataCity = document.querySelector(".town");
   let temperatureElement = document.querySelector("#dataDegrees");
   let dataDegrees = document.querySelector("#dataDegrees");
-  let dataWind = document.querySelector(".dataWind"); //Homework (week7) Wind
+  let dataWind = document.querySelector(".dataWind");
   let celsius = document.querySelector(".celsius");
   let fahrenheit = document.querySelector(".f");
   let convertToFahr = Math.round(currentlyTemp * 1.8 + 32);
@@ -163,8 +171,8 @@ function showTemperature(response) {
   feelsLike.innerHTML = Math.round(response.data.main.feels_like);
   fahrenheit.addEventListener("click", function () {
     dataDegrees.innerHTML = convertToFahr;
+    getForecast(response.data.coord);
   });
-  getForecast(response.data.coord);
 
   celsius.addEventListener("click", function () {
     dataDegrees.innerHTML = currentlyTemp;
