@@ -45,23 +45,16 @@ body {
   float: left;
   width: 200px;
   height: 150px;
+}
+#icon {
+  display: inline;
+  width: 200px;
   margin: 0 0;
   padding: 0 0;
-  overflow: hidden;
-}
-.img {
-  float: left;
+  display: block;
   position: relative;
-  top: -45px;
-  left: -10px;
-  width: 200px;
-  height: 150px;
-  margin: 0 0;
-  padding: 0 0;
-  overflow: hidden;
-}
-.icon {
-  width: 200px;
+  top: -30px;
+  left: -25px;
 }
 #townData {
   min-width: 400px;
