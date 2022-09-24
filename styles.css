@@ -1,143 +1,165 @@
 body {
-  background-color: #c0c0c0;
+  background-color: #f5f5f6;
   width: auto;
   height: auto;
   margin: 0 0;
   padding: 0 0;
 }
-.wrapper {
-  width: 800px;
+/* .wrapper {
+  min-width: 800px;
+  max-width: 1000px;
   height: auto;
   padding: 0 0;
   margin: 15px auto;
-}
+} */
 .header {
   width: 800px;
-  min-height: 310px;
+  /* min-height: 250px; */
   padding: 0 0;
-  margin: 0 auto;
+  margin: 20px auto;
   background-color: white;
   border-radius: 4px;
+  overflow: hidden;
 }
 
 .timeBlock {
-  width: 180px;
+  width: 200px;
   min-height: 300px;
   float: left;
+  overflow: hidden;
 }
 
 .currentDate,
 .description {
-  padding: 0 0;
-  margin: 0 0;
   float: left;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
-  color: #457eaa;
+  color: #546e7a;
 }
 .description {
-  margin: 0 0 0 25px;
-  padding: 0 0;
-  width: 175px;
+  position: relative;
+  left: 15px;
+  top: -25px;
   height: 40px;
+  text-transform: capitalize;
 }
 .currentDate {
-  width: 200px;
-  padding: 25px 0 5px 25px;
-  height: 110px;
+  padding: 25px 0 25px 15px;
 }
 
 #icon {
   display: inline;
-  width: 200px;
-  margin: 0 0;
-  padding: 0 0;
-  display: block;
   position: relative;
-  top: -30px;
+  top: -55px;
   left: -25px;
+  width: 200px;
 }
 
 #townData {
   min-width: 400px;
-  min-height: 300px;
-  padding: 0 0;
-  margin: 0 20 0 200px;
+  min-height: 150px;
+  margin-right: 20px;
+  margin-left: 200px;
 }
 .town {
   position: relative;
-  top: 4px;
-  left: 8px;
+  top: 14px;
+  left: 1px;
   width: 450px;
-  margin: 0 0 20px 0px;
-  padding: 14px 0 0 0;
-  color: #457eaa;
-  font-weight: bold;
+  color: #546e7a;
+  font-weight: 500;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 26px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 #searchForm {
   position: relative;
-  top: -5px;
-  left: -5px;
+  top: 7px;
   width: 270px;
   height: 37px;
-  padding: 0 20px 0 20px;
-  margin: 0 0 10px 0;
+  padding-right: 20px;
+  padding-left: 20px;
   border-radius: 4px;
-  border: 2px solid #c0c0c0;
-  background-color: #fbfcfe;
+  border: 1px solid #e1e2e1;
+  background-color: #f5f5f6;
 }
 
 #buttonSearch {
   position: relative;
-  top: -5px;
-  left: -180px;
-  padding: 5px 25px;
-  margin: 0;
-  background-color: #457eaa;
-  font-size: 17px;
+  top: 7px;
+  left: -165px;
+  padding: 6px 35px;
+  background-color: #546e7a;
+  font-size: 16px;
   color: white;
-  outline: none;
-  border: none;
   border-radius: 4px;
+  letter-spacing: 1px;
 }
 
+#buttonSearch:hover {
+  background-color: #819ca9;
+  color: #29434e;
+}
+#buttonSearch:active {
+  background-color: #29434e;
+  color: #819ca9;
+  font-size: 16px;
+}
 #buttonCurrent {
   position: relative;
-  top: -51px;
-  left: 390px;
-  padding: 5px 25px;
-  margin: 0 0;
-  background-color: #457eaa;
-  font-size: 17px;
+  top: -31px;
+  left: 425px;
+  padding: 6px 26px;
+  background-color: #546e7a;
+  font-size: 16px;
   color: white;
-  outline: none;
-  border: none;
   border-radius: 4px;
+  letter-spacing: 2px;
 }
-.degrees {
-  display: inline;
+
+#buttonCurrent:hover {
+  background-color: #819ca9;
+  color: #29434e;
+}
+#buttonCurrent:active {
+  background-color: #29434e;
+  color: #819ca9;
+  font-size: 16px;
+}
+
+.tempGeneralCover {
+  margin-top: -40px;
+  float: left;
+  width: 400px;
+  height: 50px;
   position: relative;
-  top: -60px;
-  left: 15px;
-  color: #457eaa;
+}
+
+.degrees {
+  float: left;
+  width: 50px;
+  height: 50px;
+  color: #546e7a;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 30px;
-  padding: 0 0;
-  margin: 0 0;
+  letter-spacing: 1px;
+}
+
+.celsiusContainer {
+  position: relative;
+  left: -10px;
+  float: left;
+  width: 50px;
+  height: 50px;
 }
 .celsius {
-  position: relative;
-  top: 0px;
-  left: -5px;
-  height: 70px;
-  color: #457eaa;
+  color: #546e7a;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-size: 30px;
@@ -145,41 +167,63 @@ body {
   border: 0;
   background: transparent;
 }
-#slash {
-  position: relative;
-  top: 0px;
-  left: -5px;
+.celsius:hover {
+  color: #819ca9;
 }
-.f {
+.celsius:active {
+  color: #29434e;
+  font-size: 29px;
+}
+#slash {
+  float: left;
   position: relative;
-  top: 0px;
   left: -5px;
-  height: 70px;
+  width: 50px;
+  height: 50px;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  color: #5c6677;
-  font-size: 18px;
+  font-size: 30px;
+  color: #546e7a;
+}
+.fahrContainer {
+  float: left;
+  position: relative;
+  left: -35px;
+  width: 50px;
+  height: 50px;
+}
+
+.f {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: #546e7a;
   font-size: 30px;
   outline: none;
   border: none;
   background: transparent;
 }
+.f:hover {
+  color: #819ca9;
+}
+.f:active {
+  color: #29434e;
+  font-size: 29px;
+}
 
 .description1 {
-  position: relative;
-  top: -60px;
-  left: 15px;
-  width: 600px;
-  min-height: 110px;
+  float: left;
+  width: 400px;
+  height: auto;
+  margin-top: 10px;
 }
 
 .feltTemp,
 .otherInf,
 .humidity,
 .wind {
+  margin: 5px 0;
   padding: 0 0;
-  margin: 0 0;
-  color: #5c6677;
+  color: #819ca9;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
@@ -196,7 +240,7 @@ footer {
   width: 800px;
   min-height: 70px;
   background-color: white;
-  border: 2px solid #c0c0c0;
+  border: 2px solid #f5f5f6;
   padding: 0 0;
   margin: 0 auto;
   border-radius: 4px;
@@ -206,7 +250,7 @@ footer {
   padding: 0 0;
   margin: 5px auto;
   text-align: center;
-  color: #457eaa;
+  color: #819ca9;
 }
 
 .copyright {
@@ -214,7 +258,7 @@ footer {
   padding: 0 0;
   margin: 5px auto;
   text-align: center;
-  color: #457eaa;
+  color: #819ca9;
 }
 
 #forecastDays {
@@ -227,4 +271,14 @@ footer {
   background-color: white;
   border-radius: 4px;
   padding: 5px 5px;
+}
+
+.weather-forecast-temperatures-max,
+.weather-forecast-temperatures-min {
+  color: #546e7a;
+}
+
+.weather-forecast-temperatures-fahr-max,
+.weather-forecast-temperatures-fahr-min {
+  color: #819ca9;
 }
