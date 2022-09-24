@@ -5,16 +5,8 @@ body {
   margin: 0 0;
   padding: 0 0;
 }
-/* .wrapper {
-  min-width: 800px;
-  max-width: 1000px;
-  height: auto;
-  padding: 0 0;
-  margin: 15px auto;
-} */
 .header {
   width: 800px;
-  /* min-height: 250px; */
   padding: 0 0;
   margin: 20px auto;
   background-color: white;
