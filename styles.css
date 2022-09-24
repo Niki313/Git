@@ -52,21 +52,13 @@ body {
 .img {
   float: left;
   position: relative;
-  top: -15px;
-  left: -25px;
+  top: -45px;
+  left: -10px;
   width: 200px;
   height: 150px;
   margin: 0 0;
   padding: 0 0;
   overflow: hidden;
-}
-#icon {
-  float: left;
-  display: inline;
-  width: 250px;
-  position: relative;
-  top: -45px;
-  left: -15px;
 }
 
 #townData {
