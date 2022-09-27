@@ -62,6 +62,7 @@ function formatDay(timestamp) {
 }
 
 function displayForecast(response) {
+  console.log({ response });
   let forecast = response.data.daily;
 
   let forecastElement = document.querySelector("#forecast");
@@ -79,7 +80,7 @@ function displayForecast(response) {
         src="http://openweathermap.org/img/wn/${
           forecastDay.weather[0].icon
         }@2x.png"
-        alt="weather icon" width="200px"/>
+        alt="weather icon" width="45px"/>
       <div class="weather-forecast-temperatures">
         <span class="weather-forecast-temperatures-max"> ${Math.round(
           forecastDay.temp.max
@@ -136,10 +137,10 @@ current.addEventListener("click", function () {
 
 function getForecast(coordinates) {
   console.log(coordinates);
-  let apiKey = "3c3046eb3665ca592e70fff5ccda526b";
-  let lat = position.coords.latitude;
-  let lon = position.coords.longitude;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+  let apiKey = "dff5c692192605ee5ed7f95b423ae857";
+  let lat = coordinates.lat;
+  let lon = coordinates.lon;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
 }
 
@@ -171,8 +172,8 @@ function showTemperature(response) {
   feelsLike.innerHTML = Math.round(response.data.main.feels_like);
   fahrenheit.addEventListener("click", function () {
     dataDegrees.innerHTML = convertToFahr;
-    getForecast(response.data.coord);
   });
+  getForecast(response.data.coord);
 
   celsius.addEventListener("click", function () {
     dataDegrees.innerHTML = currentlyTemp;
